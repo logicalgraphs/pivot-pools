@@ -28,9 +28,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Checkout trading
         uses: actions/checkout@v4
         with:
@@ -40,7 +37,7 @@ jobs:
       - name: Load Shared Environment Variables
         uses: doughepi/yaml-env-action@v1.0.0
         with:
-          files: .github/config/trading-env.yml
+          files: trading/.github/config/trading-env.yml
 
       - name: Establish app path
         run: echo "DAPP_DIR=$DAPPS_DIR/$DAPP" >> $GITHUB_ENV
